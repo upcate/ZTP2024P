@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.adm_panel'|trans }}
+{% endblock %}
+
+
+{% block body %}
+        <div class="text-center">
+            <h1> {{ 'title.adm_panel'|trans }} </h1>
+        </div>
+
+        <div class="container text-center" style="margin-top: 100px">
+            <div class="row">
+                <div class="col-sm">
+                    <a href="{{ url('accept_index') }}" title="{{ 'title.ad_accept'|trans }}" class="button">
+                        {{ 'title.ad_accept'|trans }}
+                    </a>
+                </div>
+                <div class="col-sm">
+                    <a href="{{ url('user_edit', {id: app.user.id }) }}" title="{{ 'title.change_data'|trans }}" class="button">
+                        {{ 'title.change_data'|trans }}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.ad_categories'|trans }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'title.ad_categories'|trans }}</h1>
+    {% if is_granted('ROLE_ADMIN') %}
+        <p>
+            <a href="{{ url('adCategory_create') }}" title="{{ 'title.category_create'|trans }}" class="button">
+                {{ 'title.category_create'|trans }}
+            </a>
+        </p>
+    {% endif %}
+    {% if pagination is defined and pagination.items|length %}
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ 'label.id'|trans }}</th>
+                <th>{{ 'label.name'|trans }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.createdAt'|trans, 'ad.createdAt') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.updatedAt'|trans, 'ad.updatedAt') }}</th>
+                <th>{{ 'label.actions'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for adCategory in pagination.items %}
+                <tr>
+                    <td>{{ adCategory.id }}</td>
+                    <td>{{ adCategory.name }}</td>
+                    <td>{{ adCategory.createdAt|format_date(locale='pl') }}</td>
+                    <td>{{ adCategory.updatedAt|format_date(locale='pl') }}</td>
+                    <td>
+                        <a href="{{ url('adCategory_show', {id: adCategory.id}) }}" title="{{ 'action.view'|trans }}">
+                            {{ 'action.view'|trans }}
+                        </a>
+                        <br>
+                        <a href="{{ url('adCategory_edit', {id: adCategory.id}) }}" title="{{ 'action.edit'|trans }}">
+                            {{ 'action.edit'|trans }}
+                        </a>
+                        <br>
+                        <a href="{{ url('adCategory_delete', {id: adCategory.id}) }}" title="{{ 'action.delete'|trans }}">
+                            {{ 'action.delete'|trans }}
+                        </a>
+                        <br>
+                        <a href="{{ url('ad_index', {'filters.adCategory_id' : adCategory.id}) }}" title="{{ adCategory.name }}">
+                            {{ 'action.show_filtered'|trans }}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+    {% else %}
+        <p>
+            {{ 'message.empty_list'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

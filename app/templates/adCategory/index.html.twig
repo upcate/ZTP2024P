@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.ad_categories'|trans }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'title.ad_categories'|trans }}</h1>
+    {% if is_granted('ROLE_ADMIN') %}
+        <p>
+            <a href="{{ url('adCategory_create') }}" title="{{ 'title.category_create'|trans }}" class="button">
+                {{ 'title.category_create'|trans }}
+            </a>
+        </p>
+    {% endif %}
+    {% if pagination is defined and pagination.items|length %}
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ 'label.name'|trans }}</th>
+                <th>{{ 'label.actions'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for adCategory in pagination.items %}
+                <tr>
+                    <td>{{ adCategory.name }}</td>
+                    <td>
+                        <a href="{{ url('ad_index', {'filters.adCategory_id' : adCategory.id}) }}" title="{{ adCategory.name }}">
+                            {{ 'action.show_filtered'|trans }}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+    {% else %}
+        <p>
+            {{ 'message.empty_list'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

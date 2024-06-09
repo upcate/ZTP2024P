@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="label.actions">
+        <source>label.actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="label.id">
+        <source>label.id</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="label.title">
+        <source>label.title</source>
+        <target>Tiitle</target>
+      </trans-unit>
+      <trans-unit id="label.content">
+        <source>label.content</source>
+        <target>Content</target>
+      </trans-unit>
+      <trans-unit id="label.tags">
+        <source>label.tags</source>
+        <target>Tags</target>
+      </trans-unit>
+      <trans-unit id="message.empty_list">
+        <source>message.empty_list</source>
+        <target>Empty list!</target>
+      </trans-unit>
+      <trans-unit id="message.record_not_found">
+        <source>message.record_not_found</source>
+        <target>Record not found</target>
+      </trans-unit>
+      <trans-unit id="title.record_list">
+        <source>title.record_list</source>
+        <target>Records list</target>
+      </trans-unit>
+      <trans-unit id="title.record_view">
+        <source>title.record_view</source>
+        <target>Record view #%id%</target>
+      </trans-unit>
+      <trans-unit id="label.category">
+        <source>label.category</source>
+        <target>Category</target>
+      </trans-unit>
+      <trans-unit id="label.updatedAt">
+        <source>label.updatedAt</source>
+        <target>Updated At</target>
+      </trans-unit>
+      <trans-unit id="label.createdAt">
+        <source>label.createdAt</source>
+        <target>Created at</target>
+      </trans-unit>
+      <trans-unit id="title.taskList">
+        <source>title.taskList</source>
+        <target>Task List</target>
+      </trans-unit>
+      <trans-unit id="tile.taskView">
+        <source>title.taskView</source>
+        <target>Task #%id%</target>
+      </trans-unit>
+      <trans-unit id="tile.tasks">
+        <source>title.tasks</source>
+        <target>Tasks</target>
+      </trans-unit>
+      <trans-unit id="tile.categories">
+        <source>title.categories</source>
+        <target>Categories</target>
+      </trans-unit>
+      <trans-unit id="action.save">
+        <source>action.save</source>
+        <target>Save</target>
+      </trans-unit>
+      <trans-unit id="action.back_to_list">
+        <source>action.back_to_list</source>
+        <target>Back to list</target>
+      </trans-unit>
+      <trans-unit id="title.category_create">
+        <source>title.category_create</source>
+        <target>Create category</target>
+      </trans-unit>
+      <trans-unit id="message.created_successfully">
+        <source>message.created_successfully</source>
+        <target>Created successfully!</target>
+      </trans-unit>
+      <trans-unit id="title.category_edit">
+        <source>title.category_edit</source>
+        <target>Edit category</target>
+      </trans-unit>
+      <trans-unit id="action.delete">
+        <source>action.delete</source>
+        <target>Delete</target>
+      </trans-unit>
+      <trans-unit id="title.category_delete">
+        <source>title.category_delete</source>
+        <target>Delete category #%id%</target>
+      </trans-unit>
+            <trans-unit id="title.adCategory_delete">
+              <source>title.adCategory_delete</source>
+              <target>Delete category %name%</target>
+            </trans-unit>
+      <trans-unit id="message.deleted_successfully">
+        <source>message.deleted_successfully</source>
+        <target>Deleted successfully</target>
+      </trans-unit>
+      <trans-unit id="message.edited_successfully">
+        <source>message.edited_successfully</source>
+        <target>Edited successfully</target>
+      </trans-unit>
+      <trans-unit id="label.username">
+        <source>label.username</source>
+        <target>User</target>
+      </trans-unit>
+      <trans-unit id="label.phone">
+        <source>label.phone</source>
+        <target>Telephone</target>
+      </trans-unit>
+      <trans-unit id="label.email">
+        <source>label.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="title.ad_list">
+        <source>title.ad_list</source>
+        <target>Ad List</target>
+      </trans-unit>
+      <trans-unit id="action.view">
+        <source>action.view</source>
+        <target>Show</target>
+      </trans-unit>
+      <trans-unit id="label.text">
+        <source>label.text</source>
+        <target>Content</target>
+      </trans-unit>
+      <trans-unit id="title.ad_categories">
+        <source>title.ad_categories</source>
+        <target>Ad categories</target>
+      </trans-unit>
+      <trans-unit id="label.name">
+        <source>label.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="action.ad_list">
+        <source>action.ad_list</source>
+        <target>Ads</target>
+      </trans-unit>
+      <trans-unit id="action.category_list">
+        <source>action.category_list</source>
+        <target>Categories</target>
+      </trans-unit>
+      <trans-unit id="action.edit">
+        <source>action.edit</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="action.login">
+        <source>action.login</source>
+        <target>Log in</target>
+      </trans-unit>
+      <trans-unit id="action.logout">
+        <source>action.logout</source>
+        <target>Log out</target>
+      </trans-unit>
+      <trans-unit id="title.main">
+        <source>title.main</source>
+        <target>Main page</target>
+      </trans-unit>
+      <trans-unit id="label.logged_as">
+        <source>label.logged_as</source>
+        <target>Logged as</target>
+      </trans-unit>
+      <trans-unit id="title.to_accept">
+        <source>title.to_accept</source>
+        <target>Ads to accept</target>
+      </trans-unit>
+      <trans-unit id="action.accept">
+        <source>action.accept</source>
+        <target>Accept</target>
+      </trans-unit>
+      <trans-unit id="title.adm_panel">
+        <source>title.adm_panel</source>
+        <target>Admin panel</target>
+      </trans-unit>
+      <trans-unit id="title.ad_accept">
+        <source>title.ad_accept</source>
+        <target>Accept ads</target>
+      </trans-unit>
+      <trans-unit id="title.change_data">
+        <source>title.change_data</source>
+        <target>Change login data</target>
+      </trans-unit>
+      <trans-unit id="message.accepted_successfully">
+        <source>message.accepted_successfully</source>
+        <target>Accepted successfully!</target>
+      </trans-unit>
+      <trans-unit id="title.ad_delete">
+        <source>title.ad_delete</source>
+        <target>Delete ad</target>
+      </trans-unit>
+      <trans-unit id="title.ad_create">
+        <source>title.ad_create</source>
+        <target>Create ad</target>
+      </trans-unit>
+      <trans-unit id="title.ad_edit">
+        <source>title.ad_edit</source>
+        <target>Edit ad</target>
+      </trans-unit>
+      <trans-unit id="message.category_contains_ads">
+        <source>message.category_contains_ads</source>
+        <target>Category is assigned to the ad!</target>
+      </trans-unit>
+      <trans-unit id="message.changed_successfully">
+        <source>message.changed_successfully</source>
+        <target>Ad edited successfully</target>
+      </trans-unit>
+      <trans-unit id="action.back">
+        <source>action.back</source>
+        <target>Go back</target>
+      </trans-unit>
+      <trans-unit id="label.password">
+        <source>label.password</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="action.sign_in">
+        <source>action.sign_in</source>
+        <target>Log in</target>
+      </trans-unit>
+      <trans-unit id="action.show_filtered">
+        <source>action.show_filtered</source>
+        <target>Show ads</target>
+      </trans-unit>
+            <trans-unit id="message.category_contains_tasks">
+              <source>message.category_contains_tasks</source>
+              <target>Cateogry contains task!</target>
+            </trans-unit>
+                  <trans-unit id="message.form_error">
+                    <source>message.form_error</source>
+                    <target>Form error</target>
+                  </trans-unit>
+      <trans-unit id="label.none">
+        <source>label.none</source>
+        <target>Choose category</target>
+      </trans-unit>
+                <trans-unit id="message.welcome">
+                    <source>message.welcome</source>
+                    <target>Welcome to ad service!</target>
+                  </trans-unit>
+    </body>
+  </file>
+</xliff>

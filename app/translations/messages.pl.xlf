@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="pl" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="label.actions">
+        <source>label.actions</source>
+        <target>Akcje</target>
+      </trans-unit>
+      <trans-unit id="label.id">
+        <source>label.id</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="label.title">
+        <source>label.title</source>
+        <target>Tytuł</target>
+      </trans-unit>
+      <trans-unit id="label.content">
+        <source>label.content</source>
+        <target>Zawartość</target>
+      </trans-unit>
+      <trans-unit id="label.tags">
+        <source>label.tags</source>
+        <target>Tagi</target>
+      </trans-unit>
+      <trans-unit id="message.empty_list">
+        <source>message.empty_list</source>
+        <target>Pusta Lista!</target>
+      </trans-unit>
+      <trans-unit id="message.record_not_found">
+        <source>message.record_not_found</source>
+        <target>Nie znaleziono rekordu</target>
+      </trans-unit>
+      <trans-unit id="title.record_list">
+        <source>title.record_list</source>
+        <target>Lista rekordów</target>
+      </trans-unit>
+      <trans-unit id="title.record_view">
+        <source>title.record_view</source>
+        <target>Rekord #%id%</target>
+      </trans-unit>
+      <trans-unit id="label.category">
+        <source>label.category</source>
+        <target>Kategoria</target>
+      </trans-unit>
+      <trans-unit id="label.updatedAt">
+        <source>label.updatedAt</source>
+        <target>Zaktualizowano</target>
+      </trans-unit>
+      <trans-unit id="label.createdAt">
+        <source>label.createdAt</source>
+        <target>Stworzono</target>
+      </trans-unit>
+      <trans-unit id="title.taskList">
+        <source>title.taskList</source>
+        <target>Lista Zadań</target>
+      </trans-unit>
+      <trans-unit id="tile.taskView">
+        <source>title.taskView</source>
+        <target>Zadanie #%id%</target>
+      </trans-unit>
+      <trans-unit id="tile.tasks">
+        <source>title.tasks</source>
+        <target>Zadania</target>
+      </trans-unit>
+      <trans-unit id="tile.categories">
+        <source>title.categories</source>
+        <target>Kategorie</target>
+      </trans-unit>
+      <trans-unit id="action.save">
+        <source>action.save</source>
+        <target>Zapisz</target>
+      </trans-unit>
+      <trans-unit id="action.back_to_list">
+        <source>action.back_to_list</source>
+        <target>Powrót do listy</target>
+      </trans-unit>
+      <trans-unit id="title.category_create">
+        <source>title.category_create</source>
+        <target>Stwórz kategorię</target>
+      </trans-unit>
+      <trans-unit id="message.created_successfully">
+        <source>message.created_successfully</source>
+        <target>Stworzono pomyślnie!</target>
+      </trans-unit>
+      <trans-unit id="title.category_edit">
+        <source>title.category_edit</source>
+        <target>Edytuj kategorię</target>
+      </trans-unit>
+      <trans-unit id="action.delete">
+        <source>action.delete</source>
+        <target>Usuń</target>
+      </trans-unit>
+      <trans-unit id="title.category_delete">
+        <source>title.category_delete</source>
+        <target>Usuń kategorię #%id%</target>
+      </trans-unit>
+            <trans-unit id="title.adCategory_delete">
+              <source>title.adCategory_delete</source>
+              <target>Usuń kategorię %name%</target>
+            </trans-unit>
+      <trans-unit id="message.deleted_successfully">
+        <source>message.deleted_successfully</source>
+        <target>Usunięto pomyślnie</target>
+      </trans-unit>
+      <trans-unit id="message.edited_successfully">
+        <source>message.edited_successfully</source>
+        <target>Zedytowano pomyślnie</target>
+      </trans-unit>
+      <trans-unit id="label.username">
+        <source>label.username</source>
+        <target>Użytkownik</target>
+      </trans-unit>
+      <trans-unit id="label.phone">
+        <source>label.phone</source>
+        <target>Telefon</target>
+      </trans-unit>
+      <trans-unit id="label.email">
+        <source>label.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="title.ad_list">
+        <source>title.ad_list</source>
+        <target>Lista Ogłoszeń</target>
+      </trans-unit>
+      <trans-unit id="action.view">
+        <source>action.view</source>
+        <target>Pokaż</target>
+      </trans-unit>
+      <trans-unit id="label.text">
+        <source>label.text</source>
+        <target>Treść</target>
+      </trans-unit>
+      <trans-unit id="title.ad_categories">
+        <source>title.ad_categories</source>
+        <target>Kategorie Ogłoszeń</target>
+      </trans-unit>
+      <trans-unit id="label.name">
+        <source>label.name</source>
+        <target>Nazwa</target>
+      </trans-unit>
+      <trans-unit id="action.ad_list">
+        <source>action.ad_list</source>
+        <target>Ogłoszenia</target>
+      </trans-unit>
+      <trans-unit id="action.category_list">
+        <source>action.category_list</source>
+        <target>Kategorie</target>
+      </trans-unit>
+      <trans-unit id="action.edit">
+        <source>action.edit</source>
+        <target>Edytuj</target>
+      </trans-unit>
+      <trans-unit id="action.login">
+        <source>action.login</source>
+        <target>Zaloguj się</target>
+      </trans-unit>
+      <trans-unit id="action.logout">
+        <source>action.logout</source>
+        <target>Wyloguj się</target>
+      </trans-unit>
+      <trans-unit id="title.main">
+        <source>title.main</source>
+        <target>Strona Główna</target>
+      </trans-unit>
+      <trans-unit id="label.logged_as">
+        <source>label.logged_as</source>
+        <target>Zalogowano jako</target>
+      </trans-unit>
+      <trans-unit id="title.to_accept">
+        <source>title.to_accept</source>
+        <target>Ogłoszenia oczeukjące na zatwierdzenie</target>
+      </trans-unit>
+      <trans-unit id="action.accept">
+        <source>action.accept</source>
+        <target>Zaakceptuj</target>
+      </trans-unit>
+      <trans-unit id="title.adm_panel">
+        <source>title.adm_panel</source>
+        <target>Panel Administratora</target>
+      </trans-unit>
+      <trans-unit id="title.ad_accept">
+        <source>title.ad_accept</source>
+        <target>Zaakceptuj ogłoszenia</target>
+      </trans-unit>
+      <trans-unit id="title.change_data">
+        <source>title.change_data</source>
+        <target>Zmień dane administratora</target>
+      </trans-unit>
+      <trans-unit id="message.accepted_successfully">
+        <source>message.accepted_successfully</source>
+        <target>Zaakceptowano pomyślnie!</target>
+      </trans-unit>
+      <trans-unit id="title.ad_delete">
+        <source>title.ad_delete</source>
+        <target>Usuń ogłoszenie</target>
+      </trans-unit>
+      <trans-unit id="title.ad_create">
+        <source>title.ad_create</source>
+        <target>Stwórz ogłoszenie</target>
+      </trans-unit>
+      <trans-unit id="title.ad_edit">
+        <source>title.ad_edit</source>
+        <target>Edytuj ogłoszenie</target>
+      </trans-unit>
+      <trans-unit id="message.category_contains_ads">
+        <source>message.category_contains_ads</source>
+        <target>Kategoria jest przypisana do ogłoszenia!</target>
+      </trans-unit>
+      <trans-unit id="message.changed_successfully">
+        <source>message.changed_successfully</source>
+        <target>Dane zmieniono pomyślnie</target>
+      </trans-unit>
+      <trans-unit id="action.back">
+        <source>action.back</source>
+        <target>Powrót</target>
+      </trans-unit>
+      <trans-unit id="label.password">
+        <source>label.password</source>
+        <target>Hasło</target>
+      </trans-unit>
+      <trans-unit id="action.sign_in">
+        <source>action.sign_in</source>
+        <target>Zaloguj się</target>
+      </trans-unit>
+      <trans-unit id="action.show_filtered">
+        <source>action.show_filtered</source>
+        <target>Pokaż ogłoszenia</target>
+      </trans-unit>
+      <trans-unit id="message.category_contains_tasks">
+        <source>message.category_contains_tasks</source>
+        <target>Kategoria jest przypisana do zadania!</target>
+      </trans-unit>
+            <trans-unit id="message.form_error">
+              <source>message.form_error</source>
+              <target>Błąd formularza!</target>
+            </trans-unit>
+            <trans-unit id="label.none">
+                    <source>label.none</source>
+                    <target>Wybierz kategorię</target>
+                  </trans-unit>
+                <trans-unit id="message.welcome">
+                    <source>message.welcome</source>
+                    <target>Witaj w serwisie ogłoszeniowym!</target>
+                  </trans-unit>
+    </body>
+  </file>
+</xliff>

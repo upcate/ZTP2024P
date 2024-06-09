@@ -1,0 +1,12 @@
+body {
+    background-color: lightgray;
+}
+
+.button {
+    background-color: #9fc8d5;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+}

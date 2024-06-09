@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ ad.title }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ ad.title }}</h1>
+    {% if ad is defined and ad|length %}
+        <dl class="dl-horizontal">
+            <dt>{{ 'label.id'|trans }}</dt>
+            <dd>{{ ad.id }}</dd>
+            <dt>{{ 'label.username'|trans }}</dt>
+            <dd>{{ ad.username }}</dd>
+            <dt>{{ 'label.phone'|trans }}</dt>
+            <dd>{{ ad.phone }}</dd>
+            <dt>{{ 'label.email'|trans }}</dt>
+            <dd>{{ ad.email }}</dd>
+            <dt>{{ 'label.title'|trans }}</dt>
+            <dd>{{  ad.title }}</dd>
+            <dt>{{ 'label.text'|trans }}</dt>
+            <dd>{{  ad.text }}</dd>
+            <dt>{{ 'label.createdAt'|trans }}</dt>
+            <dd>{{ ad.createdAt|format_date(locale='pl') }}</dd>
+            <dt>{{ 'label.updatedAt'|trans }}</dt>
+            <dd>{{ ad.updatedAt|format_date(locale='pl') }}</dd>
+            <dt>{{ 'label.category'|trans }}</dt>
+            <dd>{{ ad.adCategory.name }}</dd>
+        </dl>
+        
+        <p>
+            <a href="{{ url('ad_index') }}" title="{{ 'action.back_to_list'|trans }}">
+                {{ 'action.back_to_list'|trans }}
+            </a>
+        </p>
+    {% else %}
+        <p>
+            {{ 'message.record_not_found'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

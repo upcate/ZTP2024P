@@ -9,18 +9,18 @@ namespace App\Controller;
 use App\Entity\Ad;
 use App\Form\Type\AdType;
 use App\Service\AdServiceInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * Class AdController.
  */
-#[\Symfony\Component\Routing\Attribute\Route('/ad')]
+#[Route('/ad')]
 class AdController extends AbstractController
 {
     /**
@@ -29,16 +29,7 @@ class AdController extends AbstractController
      * @param AdServiceInterface  $adService  Ad Service Interface
      * @param TranslatorInterface $translator Translator
      */
-    public function __construct(
-        /**
-         * AdServiceInterface.
-         */
-        private readonly AdServiceInterface $adService,
-        /**
-         * TranslatorInterface.
-         */
-        private readonly TranslatorInterface $translator
-    )
+    public function __construct(private readonly AdServiceInterface $adService, private readonly TranslatorInterface $translator)
     {
     }
 
@@ -49,7 +40,7 @@ class AdController extends AbstractController
      *
      * @return Response HTTP Response
      */
-    #[\Symfony\Component\Routing\Attribute\Route(
+    #[Route(
         name: 'ad_index',
         methods: 'get'
     )]
@@ -87,7 +78,7 @@ class AdController extends AbstractController
      *
      * @return Response HTTP Response
      */
-    #[\Symfony\Component\Routing\Attribute\Route(
+    #[Route(
         '/toAccept',
         name: 'accept_index',
         methods: 'get'
@@ -110,7 +101,7 @@ class AdController extends AbstractController
      *
      * @return Response HTTP Response
      */
-    #[\Symfony\Component\Routing\Attribute\Route(
+    #[Route(
         '/{id}/accept',
         name: 'ad_accept',
         requirements: ['id' => '[1-9]\d*'],
@@ -120,8 +111,8 @@ class AdController extends AbstractController
     public function acceptAd(Request $request, Ad $ad): Response
     {
         $form = $this->createForm(FormType::class, $ad, [
-                'method' => 'PUT',
-                'action' => $this->generateUrl('ad_accept', ['id' => $ad->getId()]),
+            'method' => 'PUT',
+            'action' => $this->generateUrl('ad_accept', ['id' => $ad->getId()]),
         ]);
         $form->handleRequest($request);
 
@@ -139,8 +130,8 @@ class AdController extends AbstractController
         return $this->render(
             '/ad/accept.html.twig',
             [
-              'ad' => $ad,
-              'form' => $form->createView(),
+                'ad' => $ad,
+                'form' => $form->createView(),
             ]
         );
     }
@@ -152,7 +143,7 @@ class AdController extends AbstractController
      *
      * @return Response HTTP Response
      */
-    #[\Symfony\Component\Routing\Attribute\Route(
+    #[Route(
         '/{id}',
         name: 'ad_show',
         requirements: ['id' => '[1-9]\d*'],
@@ -173,10 +164,10 @@ class AdController extends AbstractController
      *
      * @return Response HTTP Response
      */
-    #[\Symfony\Component\Routing\Attribute\Route(
+    #[Route(
         '/create',
         name: 'ad_create',
-        methods: 'get|post'
+        methods: 'GET|POST'
     )]
     public function create(Request $request): Response
     {
@@ -202,7 +193,7 @@ class AdController extends AbstractController
         return $this->render(
             'ad/create.html.twig',
             [
-              'form' => $form->createView(),
+                'form' => $form->createView(),
             ]
         );
     }
@@ -215,7 +206,7 @@ class AdController extends AbstractController
      *
      * @return Response HTTP Response
      */
-    #[\Symfony\Component\Routing\Attribute\Route(
+    #[Route(
         '/{id}/edit',
         name: 'ad_edit',
         requirements: ['id' => '[1-9]\d*'],
@@ -255,7 +246,7 @@ class AdController extends AbstractController
      *
      * @return Response HTTP Response
      */
-    #[\Symfony\Component\Routing\Attribute\Route(
+    #[Route(
         '/{id}/delete',
         name: 'ad_delete',
         requirements: ['id' => '[1-9]\d*'],
@@ -295,7 +286,7 @@ class AdController extends AbstractController
      *
      * @return Response HTTP Response
      */
-    #[\Symfony\Component\Routing\Attribute\Route(
+    #[Route(
         '/{id}/accept/delete',
         name: 'accept_delete',
         requirements: ['id' => '[1-9]\d*'],

@@ -9,17 +9,17 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\Type\UserType;
 use App\Service\UserServiceInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * Class UserController.
  */
-#[\Symfony\Component\Routing\Attribute\Route('/admin')]
+#[Route('/admin')]
 class UserController extends AbstractController
 {
     /**
@@ -28,16 +28,7 @@ class UserController extends AbstractController
      * @param UserServiceInterface $userService User Interface
      * @param TranslatorInterface  $translator  Translator Interface
      */
-    public function __construct(
-        /**
-         * UserServiceInterface.
-         */
-        private readonly UserServiceInterface $userService,
-        /**
-         * TranslatorInterface.
-         */
-        private readonly TranslatorInterface $translator
-    )
+    public function __construct(private readonly UserServiceInterface $userService, private readonly TranslatorInterface $translator)
     {
     }
 
@@ -49,7 +40,7 @@ class UserController extends AbstractController
      *
      * @return Response HTTP Response
      */
-    #[\Symfony\Component\Routing\Attribute\Route(
+    #[Route(
         '/{id}/edit',
         name: 'user_edit',
         requirements: ['id' => '[1-9]\d*'],
@@ -78,8 +69,8 @@ class UserController extends AbstractController
         return $this->render(
             'admin/edit.html.twig',
             [
-              'form' => $form->createView(),
-              'user' => $user,
+                'form' => $form->createView(),
+                'user' => $user,
             ]
         );
     }

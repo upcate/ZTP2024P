@@ -9,18 +9,18 @@ namespace App\Controller;
 use App\Entity\AdCategory;
 use App\Form\Type\AdCategoryType;
 use App\Service\AdCategoryServiceInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * Class AdCategoryController.
  */
-#[\Symfony\Component\Routing\Attribute\Route('/adCategory')]
+#[Route('/adCategory')]
 class AdCategoryController extends AbstractController
 {
     /**
@@ -38,8 +38,7 @@ class AdCategoryController extends AbstractController
          * TranslatorInterface.
          */
         private readonly TranslatorInterface $translator
-    )
-    {
+    ) {
     }
 
     /**
@@ -49,7 +48,7 @@ class AdCategoryController extends AbstractController
      *
      * @return Response HTTP Response
      */
-    #[\Symfony\Component\Routing\Attribute\Route(
+    #[Route(
         name: 'adCategory_index',
         methods: 'get'
     )]
@@ -72,7 +71,7 @@ class AdCategoryController extends AbstractController
      *
      * @return Response HTTP Response
      */
-    #[\Symfony\Component\Routing\Attribute\Route(
+    #[Route(
         '/{id}',
         name: 'adCategory_show',
         requirements: ['id' => '[1-9]\d*'],
@@ -94,7 +93,7 @@ class AdCategoryController extends AbstractController
      *
      * @return Response HTTP Response
      */
-    #[\Symfony\Component\Routing\Attribute\Route(
+    #[Route(
         '/create',
         name: 'adCategory_create',
         methods: 'get|post'
@@ -131,7 +130,7 @@ class AdCategoryController extends AbstractController
      *
      * @return Response HTTP Response
      */
-    #[\Symfony\Component\Routing\Attribute\Route(
+    #[Route(
         '/admin/{id}/edit',
         name: 'adCategory_edit',
         requirements: ['id' => '[1-9]\d*'],
@@ -174,7 +173,7 @@ class AdCategoryController extends AbstractController
      *
      * @return Response HTTP Response
      */
-    #[\Symfony\Component\Routing\Attribute\Route(
+    #[Route(
         '/{id}/delete',
         name: 'adCategory_delete',
         requirements: ['id' => '[1-9]\d*'],

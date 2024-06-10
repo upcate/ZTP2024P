@@ -50,38 +50,38 @@ class AdType extends AbstractType
             'email',
             EmailType::class,
             [
-              'label' => 'label.email',
-              'required' => 'true',
-              'attr' => ['max_length' => 255],
+                'label' => 'label.email',
+                'required' => 'true',
+                'attr' => ['max_length' => 255],
             ]
         );
         $builder->add(
             'phone',
             TextType::class,
             [
-              'label' => 'label.phone',
-              'required' => 'true',
-              'attr' => ['max_length' => 255],
+                'label' => 'label.phone',
+                'required' => 'true',
+                'attr' => ['max_length' => 255],
             ]
         );
         $builder->add(
             'text',
             TextType::class,
             [
-              'label' => 'label.text',
-              'required' => 'true',
-              'attr' => ['max_length' => 255],
+                'label' => 'label.text',
+                'required' => 'true',
+                'attr' => ['max_length' => 255],
             ]
         );
         $builder->add(
             'adCategory',
             EntityType::class,
             [
-              'class' => AdCategory::class,
-              'choice_label' => fn($adCategory): string => $adCategory->getName(),
-              'label' => 'label.category',
-              'placeholder' => 'label.none',
-              'required' => 'true',
+                'class' => AdCategory::class,
+                'choice_label' => fn ($adCategory): string => $adCategory->getName(),
+                'label' => 'label.category',
+                'placeholder' => 'label.none',
+                'required' => 'true',
             ]
         );
     }

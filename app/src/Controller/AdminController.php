@@ -6,11 +6,9 @@
 
 namespace App\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 /**
  * Class AdminController.
@@ -21,8 +19,6 @@ class AdminController extends AbstractController
     /**
      * Show admin panel action.
      *
-     * @param Request $request HTTP Request
-     *
      * @return Response HTTP Response
      */
     #[\Symfony\Component\Routing\Attribute\Route(
@@ -32,7 +28,7 @@ class AdminController extends AbstractController
     )
     ]
     #[IsGranted('ROLE_ADMIN')]
-    public function panel() : Response
+    public function panel(): Response
     {
         return $this->render(
             'admin/panel.html.twig'

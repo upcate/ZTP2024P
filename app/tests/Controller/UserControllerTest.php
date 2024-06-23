@@ -3,12 +3,18 @@
  * UserControllerTest.
  */
 
+/**
+ * This test file is a part of project made as a part of the ZTP course completion.
+ *
+ * (c) Miłosz Świątek <milosz.swiatek@student.uj.edu.pl>
+ */
+
 namespace App\Tests\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use App\Entity\User;
 use App\Entity\Enum\UserRole;
+use App\Entity\User;
 use App\Repository\UserRepository;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
  * Class UserControllerTest.
@@ -46,7 +52,7 @@ class UserControllerTest extends WebTestCase
     public function testEditRouteAdminUser(): void
     {
         // given
-        $expectedStatusCode = 302;
+        $expectedStatusCode = 200;
 
         // when
         $this->httpClient->loginUser($this->adminUser);

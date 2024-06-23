@@ -3,6 +3,12 @@
  * AdCategoryControllerTest.
  */
 
+/**
+ * This test file is a part of project made as a part of the ZTP course completion.
+ *
+ * (c) Miłosz Świątek <milosz.swiatek@student.uj.edu.pl>
+ */
+
 namespace App\Tests\Controller;
 
 use App\Entity\AdCategory;

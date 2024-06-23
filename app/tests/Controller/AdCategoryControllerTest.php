@@ -23,6 +23,21 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class AdCategoryControllerTest extends WebTestCase
 {
     /**
+     * HttpClient.
+     */
+    private \Symfony\Bundle\FrameworkBundle\KernelBrowser $httpClient;
+
+    /**
+     * EntityManager.
+     */
+    private mixed $entityManager;
+
+    /**
+     * AdminUser.
+     */
+    private User $adminUser;
+
+    /**
      * Set up function.
      */
     public function setUp(): void

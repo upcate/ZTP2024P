@@ -156,6 +156,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Erase Credentials.
      *
      * @see UserInterface User interface
+     *
+     * @return void might add void as a native return
      */
     public function eraseCredentials()
     {

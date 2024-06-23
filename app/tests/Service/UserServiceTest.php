@@ -13,7 +13,6 @@ namespace App\Tests\Service;
 
 use App\Entity\Enum\UserRole;
 use App\Entity\User;
-use App\Repository\UserRepository;
 use App\Service\UserService;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
@@ -22,6 +21,16 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
  */
 class UserServiceTest extends KernelTestCase
 {
+    /**
+     * UserService.
+     */
+    private UserService $userService;
+
+    /**
+     * EntityManager.
+     */
+    private mixed $entityManager;
+
     /**
      * Set up function.
      */

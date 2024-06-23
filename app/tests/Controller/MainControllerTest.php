@@ -1,6 +1,6 @@
 <?php
 /**
- * MainControllerTest/
+ * MainControllerTest/.
  */
 
 /**
@@ -19,8 +19,10 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class MainControllerTest extends WebTestCase
 {
     /**
-     * Set up function.
+     * HttpClient.
      */
+    private \Symfony\Bundle\FrameworkBundle\KernelBrowser $httpClient;
+
     public function setUp(): void
     {
         $this->httpClient = static::createClient();

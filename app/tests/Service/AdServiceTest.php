@@ -24,6 +24,26 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 class AdServiceTest extends KernelTestCase
 {
     /**
+     * EntityManager.
+     */
+    private mixed $entityManager;
+
+    /**
+     * AdCategoryService.
+     */
+    private AdCategoryService $adCategoryService;
+
+    /**
+     * AdService.
+     */
+    private AdService $adService;
+
+    /**
+     * AdRepository.
+     */
+    private AdRepository $adRepository;
+
+    /**
      * Set up function.
      */
     public function setUp(): void

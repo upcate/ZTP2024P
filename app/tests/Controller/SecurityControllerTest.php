@@ -22,6 +22,16 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class SecurityControllerTest extends WebTestCase
 {
     /**
+     * HttpClient.
+     */
+    private \Symfony\Bundle\FrameworkBundle\KernelBrowser $httpClient;
+
+    /**
+     * AdminUser.
+     */
+
+    private User $adminUser;
+    /**
      * Set up function.
      */
     public function setUp(): void

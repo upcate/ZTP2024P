@@ -24,6 +24,21 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class AdControllerTest extends WebTestCase
 {
     /**
+     * HttpClient.
+     */
+    private \Symfony\Bundle\FrameworkBundle\KernelBrowser $httpClient;
+
+    /**
+     * EntityManager.
+     */
+    private mixed $entityManager;
+
+    /**
+     * AdminUser.
+     */
+    private User $adminUser;
+
+    /**
      * Function setUp.
      */
     public function setUp(): void

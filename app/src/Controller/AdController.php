@@ -151,8 +151,10 @@ class AdController extends AbstractController
     )]
     public function show(Ad $ad): Response
     {
-        if (0 == $ad->getIsVisible() && !$this->isGranted('ROLE_ADMIN')) {
-            return $this->redirectToRoute('app_login');
+        if (0 == $ad->getIsVisible()) {
+            if (!$this->isGranted('ROLE_ADMIN')) {
+                return $this->redirectToRoute('app_login');
+            }
         }
 
         return $this->render(

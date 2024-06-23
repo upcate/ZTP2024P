@@ -26,20 +26,7 @@ class AdCategoryService implements AdCategoryServiceInterface
      * @param PaginatorInterface   $paginator            Paginator interface
      * @param AdRepository         $adRepository         Ad repository
      */
-    public function __construct(
-        /**
-         * AdCategoryRepository.
-         */
-        private readonly AdCategoryRepository $adCategoryRepository,
-        /**
-         * PaginatorInterface.
-         */
-        private readonly PaginatorInterface $paginator,
-        /**
-         * AdRepository.
-         */
-        private readonly AdRepository $adRepository
-    )
+    public function __construct(private readonly AdCategoryRepository $adCategoryRepository, private readonly PaginatorInterface $paginator, private readonly AdRepository $adRepository)
     {
     }
 
@@ -97,7 +84,7 @@ class AdCategoryService implements AdCategoryServiceInterface
             $result = $this->adRepository->countByCategory($adCategory);
 
             return $result <= 0;
-        } catch (NoResultException|NonUniqueResultException) {
+        } catch (NoResultException | NonUniqueResultException) {
             return false;
         }
     }

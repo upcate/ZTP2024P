@@ -21,16 +21,7 @@ class UserService implements UserServiceInterface
      * @param UserRepository              $userRepository User repository
      * @param UserPasswordHasherInterface $hasher         User password hasher interface
      */
-    public function __construct(
-        /**
-         * UserRepository.
-         */
-        private readonly UserRepository $userRepository,
-        /**
-         * UserPasswordHasherInterface.
-         */
-        private readonly UserPasswordHasherInterface $hasher
-    )
+    public function __construct(private readonly UserRepository $userRepository, private readonly UserPasswordHasherInterface $hasher)
     {
     }
 

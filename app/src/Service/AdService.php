@@ -23,20 +23,7 @@ class AdService implements AdServiceInterface
      * @param PaginatorInterface         $paginator         Paginator interface
      * @param AdCategoryServiceInterface $adCategoryService Ad category service interface
      */
-    public function __construct(
-        /**
-         * AdRepository.
-         */
-        private readonly AdRepository $adRepository,
-        /**
-         * PaginatorInterface.
-         */
-        private readonly PaginatorInterface $paginator,
-        /**
-         * AdCategoryServiceInterface.
-         */
-        private readonly AdCategoryServiceInterface $adCategoryService
-    )
+    public function __construct(private readonly AdRepository $adRepository, private readonly PaginatorInterface $paginator, private readonly AdCategoryServiceInterface $adCategoryService)
     {
     }
 

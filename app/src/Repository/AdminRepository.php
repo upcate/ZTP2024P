@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * This test file is a part of project made as a part of the ZTP course completion.
+ *
+ * (c) Miłosz Świątek <milosz.swiatek@student.uj.edu.pl>
+ */
+
 namespace App\Repository;
 
 use App\Entity\Admin;
@@ -14,6 +20,11 @@ use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
  */
 class AdminRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
 {
+    /**
+     * Constructor.
+     *
+     * @param ManagerRegistry $registry Manager Registry
+     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Admin::class);
@@ -21,6 +32,9 @@ class AdminRepository extends ServiceEntityRepository implements PasswordUpgrade
 
     /**
      * Used to upgrade (rehash) the user's password automatically over time.
+     *
+     * @param   PasswordAuthenticatedUserInterface  $user               Password Authenticated User Interface
+     * @param   string                              $newHashedPassword  New hashed password
      */
     public function upgradePassword(PasswordAuthenticatedUserInterface $user, string $newHashedPassword): void
     {

@@ -29,16 +29,8 @@ class AdCategoryController extends AbstractController
      * @param AdCategoryServiceInterface $adCategoryService Ad Category service interface
      * @param TranslatorInterface        $translator        Translator interface
      */
-    public function __construct(
-        /**
-         * AdCategoryServiceInterface.
-         */
-        private readonly AdCategoryServiceInterface $adCategoryService,
-        /**
-         * TranslatorInterface.
-         */
-        private readonly TranslatorInterface $translator
-    ) {
+    public function __construct(private readonly AdCategoryServiceInterface $adCategoryService, private readonly TranslatorInterface $translator)
+    {
     }
 
     /**

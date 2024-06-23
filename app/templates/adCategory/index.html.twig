@@ -21,10 +21,12 @@
 
         <table class="table table-striped">
             <thead>
-            <tr>
-                <th>{{ 'label.name'|trans }}</th>
-                <th>{{ 'label.actions'|trans }}</th>
-            </tr>
+                <tr>
+                    <th>{{ 'label.name'|trans }}</th>
+                    <th>{{ knp_pagination_sortable(pagination, 'label.createdAt'|trans, 'adCategory.createdAt') }}</th>
+                    <th>{{ knp_pagination_sortable(pagination, 'label.updatedAt'|trans, 'adCategory.updatedAt') }}</th>
+                    <th>{{ 'label.actions'|trans }}</th>
+                </tr>
             </thead>
             <tbody>
             {% for adCategory in pagination.items %}

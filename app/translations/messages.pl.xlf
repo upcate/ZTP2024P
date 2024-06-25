@@ -184,7 +184,7 @@
       </trans-unit>
       <trans-unit id="title.change_data">
         <source>title.change_data</source>
-        <target>Zmień dane administratora</target>
+        <target>Zmień hasło</target>
       </trans-unit>
       <trans-unit id="message.accepted_successfully">
         <source>message.accepted_successfully</source>

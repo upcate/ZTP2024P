@@ -1,58 +1,11 @@
-   1) src/Repository/AdRepository.php (nullable_type_declaration_for_default_null_value, statement_indentation)
-   2) src/Repository/AdminRepository.php (phpdoc_align)
-   3) src/Repository/UserRepository.php (statement_indentation)
-   4) src/Repository/AdCategoryRepository.php (nullable_type_declaration_for_default_null_value, statement_indentation)
-   5) src/DataFixtures/AdFixtures.php (global_namespace_import, no_unused_imports)
-   6) src/DataFixtures/AdCategoryFixtures.php (global_namespace_import, no_unused_imports)
-   7) src/DataFixtures/AbstractBaseFixtures.php (concat_space, global_namespace_import, no_unused_imports)
-   8) src/Controller/SecurityController.php (no_superfluous_phpdoc_tags, phpdoc_trim, no_unused_imports)
-   9) src/Controller/MainController.php (no_unused_imports)
-  10) src/Form/Type/UserType.php (array_indentation)
-  11) src/Entity/AdCategory.php (global_namespace_import, no_unused_imports)
-  12) src/Entity/Ad.php (global_namespace_import, no_unused_imports)
-  13) src/Entity/Enum/UserRole.php (class_attributes_separation)
-  14) src/Service/AdCategoryService.php (types_spaces)
 
-Found 14 of 31 files that can be fixed in 0.622 seconds, 18.00 MB memory used
-   1) tests/Controller/MainControllerTest.php (phpdoc_summary)
-   2) tests/Entity/AdCategoryTest.php (blank_lines_before_namespace)
-   3) tests/Util/CalculatorTest.php (blank_lines_before_namespace)
-   4) tests/Service/UserServiceTest.php (no_unused_imports)
+Found 0 of 31 files that can be fixed in 0.561 seconds, 18.00 MB memory used
+   1) tests/Controller/SecurityControllerTest.php (class_attributes_separation, no_blank_lines_after_phpdoc)
+   2) tests/Controller/UserControllerTest.php (class_attributes_separation, no_blank_lines_after_phpdoc)
+   3) tests/Entity/AdCategoryTest.php (blank_lines_before_namespace)
+   4) tests/Util/CalculatorTest.php (blank_lines_before_namespace)
 
-Found 4 of 13 files that can be fixed in 0.383 seconds, 18.00 MB memory used
-
-FILE: /home/wwwroot/app/src/Repository/AdminRepository.php
-----------------------------------------------------------------------
-FOUND 4 ERRORS AFFECTING 2 LINES
-----------------------------------------------------------------------
- 36 | ERROR | [x] Expected 1 spaces after parameter type; 2 found
- 36 | ERROR | [x] Expected 14 spaces after parameter name; 15 found
- 37 | ERROR | [x] Expected 29 spaces after parameter type; 30 found
- 37 | ERROR | [x] Expected 1 spaces after parameter name; 2 found
-----------------------------------------------------------------------
-PHPCBF CAN FIX THE 4 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-----------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/DataFixtures/AbstractBaseFixtures.php
-----------------------------------------------------------------------
-FOUND 1 ERROR AFFECTING 1 LINE
-----------------------------------------------------------------------
- 112 | ERROR | [x] Concat operator must not be surrounded by spaces
-----------------------------------------------------------------------
-PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
-----------------------------------------------------------------------
-
-
-FILE: /home/wwwroot/app/src/Controller/AdController.php
--------------------------------------------------------------------------------
-FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
--------------------------------------------------------------------------------
- 154 | WARNING | Always use identical comparison unless you need type juggling
--------------------------------------------------------------------------------
-
-Time: 958ms; Memory: 10MB
-
+Found 4 of 13 files that can be fixed in 0.380 seconds, 18.00 MB memory used
  ------- -------- ---- ---------------------- 
   State   Domain   Id   Message Preview (en)  
  ------- -------- ---- ---------------------- 
@@ -62,7 +15,7 @@ Time: 958ms; Memory: 10MB
  ------- -------- ---- ---------------------- ------------------------------- 
 
 [notice] Migrating up to DoctrineMigrations\Version20240609122021
-[notice] finished in 97ms, used 24M memory, 1 migrations executed, 5 sql queries
+[notice] finished in 100.2ms, used 24M memory, 1 migrations executed, 5 sql queries
 
  [OK] Successfully migrated to version: DoctrineMigrations\Version20240609122021                                        
 

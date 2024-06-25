@@ -28,13 +28,13 @@ class AdminRepository extends ServiceEntityRepository implements PasswordUpgrade
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Admin::class);
-    }
+    }// end __construct()
 
     /**
      * Used to upgrade (rehash) the user's password automatically over time.
      *
-     * @param   PasswordAuthenticatedUserInterface  $user               Password Authenticated User Interface
-     * @param   string                              $newHashedPassword  New hashed password
+     * @param PasswordAuthenticatedUserInterface $user              Password Authenticated User Interface
+     * @param string                             $newHashedPassword New hashed password
      */
     public function upgradePassword(PasswordAuthenticatedUserInterface $user, string $newHashedPassword): void
     {
@@ -45,30 +45,29 @@ class AdminRepository extends ServiceEntityRepository implements PasswordUpgrade
         $user->setPassword($newHashedPassword);
         $this->getEntityManager()->persist($user);
         $this->getEntityManager()->flush();
-    }
+    }// end upgradePassword()
 
-    //    /**
-    //     * @return Admin[] Returns an array of Admin objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('a')
-    //            ->andWhere('a.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('a.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
-
-    //    public function findOneBySomeField($value): ?Admin
-    //    {
-    //        return $this->createQueryBuilder('a')
-    //            ->andWhere('a.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
-}
+    // **
+    // * @return Admin[] Returns an array of Admin objects
+    // */
+    // public function findByExampleField($value): array
+    // {
+    // return $this->createQueryBuilder('a')
+    // ->andWhere('a.exampleField = :val')
+    // ->setParameter('val', $value)
+    // ->orderBy('a.id', 'ASC')
+    // ->setMaxResults(10)
+    // ->getQuery()
+    // ->getResult()
+    // ;
+    // }
+    // public function findOneBySomeField($value): ?Admin
+    // {
+    // return $this->createQueryBuilder('a')
+    // ->andWhere('a.exampleField = :val')
+    // ->setParameter('val', $value)
+    // ->getQuery()
+    // ->getOneOrNullResult()
+    // ;
+    // }
+}// end class

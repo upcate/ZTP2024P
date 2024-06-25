@@ -45,4 +45,4 @@ interface AdCategoryServiceInterface
      * @return bool Bool return
      */
     public function canBeDeleted(AdCategory $adCategory): bool;
-}
+}// end interface

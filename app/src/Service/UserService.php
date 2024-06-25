@@ -23,7 +23,7 @@ class UserService implements UserServiceInterface
      */
     public function __construct(private readonly UserRepository $userRepository, private readonly UserPasswordHasherInterface $hasher)
     {
-    }
+    }// end __construct()
 
     /**
      * Save.
@@ -34,5 +34,5 @@ class UserService implements UserServiceInterface
     {
         $user->setPassword($this->hasher->hashPassword($user, $user->getPassword()));
         $this->userRepository->save($user);
-    }
-}
+    }// end save()
+}// end class

@@ -66,7 +66,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getId(): ?int
     {
         return $this->id;
-    }
+    }// end getId()
 
     /**
      * Get username.
@@ -76,7 +76,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getUsername(): string
     {
         return (string) $this->username;
-    }
+    }// end getUsername()
 
     /**
      * Setter for username.
@@ -86,7 +86,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setUsername(string $username): void
     {
         $this->username = $username;
-    }
+    }// end setUsername()
 
     /**
      * Get user identifier.
@@ -96,7 +96,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getUserIdentifier(): string
     {
         return (string) $this->username;
-    }
+    }// end getUserIdentifier()
 
     /**
      * Getter for roles.
@@ -110,7 +110,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $roles[] = UserRole::ROLE_ADMIN->value;
 
         return array_unique($roles);
-    }
+    }// end getRoles()
 
     /**
      * Setter for roles.
@@ -120,7 +120,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setRoles(array $roles): void
     {
         $this->roles = $roles;
-    }
+    }// end setRoles()
 
     /**
      * Getter for password.
@@ -130,7 +130,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getPassword(): string
     {
         return $this->password;
-    }
+    }// end getPassword()
 
     /**
      * Setter for password.
@@ -140,7 +140,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPassword(string $password): void
     {
         $this->password = $password;
-    }
+    }// end setPassword()
 
     /**
      * Get salt.
@@ -150,7 +150,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getSalt(): ?string
     {
         return null;
-    }
+    }// end getSalt()
 
     /**
      * Erase Credentials.
@@ -163,5 +163,5 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
-    }
-}
+    }// end eraseCredentials()
+}// end class

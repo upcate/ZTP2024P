@@ -33,7 +33,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, User::class);
-    }
+    }// end __construct()
 
     /**
      * Add.
@@ -48,7 +48,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         if ($flush) {
             $this->getEntityManager()->flush();
         }
-    }
+    }// end add()
 
     /**
      * Remove.
@@ -63,7 +63,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         if ($flush) {
             $this->getEntityManager()->flush();
         }
-    }
+    }// end remove()
 
     /**
      * Save.
@@ -74,7 +74,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     {
         $this->_em->persist($user);
         $this->_em->flush();
-    }
+    }// end save()
 
     /**
      * Upgrade password.
@@ -91,30 +91,29 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $user->setPassword($newHashedPassword);
 
         $this->add($user, true);
-    }
+    }// end upgradePassword()
 
-//    /**
-//     * @return User[] Returns an array of User objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('u')
-//            ->andWhere('u.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('u.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?User
-//    {
-//        return $this->createQueryBuilder('u')
-//            ->andWhere('u.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
-}
+    // **
+    // * @return User[] Returns an array of User objects
+    // */
+    // public function findByExampleField($value): array
+    // {
+    // return $this->createQueryBuilder('u')
+    // ->andWhere('u.exampleField = :val')
+    // ->setParameter('val', $value)
+    // ->orderBy('u.id', 'ASC')
+    // ->setMaxResults(10)
+    // ->getQuery()
+    // ->getResult()
+    // ;
+    // }
+    // public function findOneBySomeField($value): ?User
+    // {
+    // return $this->createQueryBuilder('u')
+    // ->andWhere('u.exampleField = :val')
+    // ->setParameter('val', $value)
+    // ->getQuery()
+    // ->getOneOrNullResult()
+    // ;
+    // }
+}// end class

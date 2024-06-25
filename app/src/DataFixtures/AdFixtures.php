@@ -7,7 +7,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\Ad;
-use DateTimeImmutable;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 /**
@@ -24,38 +23,42 @@ class AdFixtures extends AbstractBaseFixtures implements DependentFixtureInterfa
             return;
         }
 
-        $this->createMany(100, 'ads', function (int $i) {
-            $ad = new Ad();
-            $ad->setTitle($this->faker->sentence);
-            $ad->setCreatedAt(
-                DateTimeImmutable::createFromMutable(
-                    $this->faker->dateTimeBetween('-100 days', '-1 days')
-                )
-            );
-            $ad->setUpdatedAt(
-                DateTimeImmutable::createFromMutable(
-                    $this->faker->dateTimeBetween('-100 days', '-1 days')
-                )
-            );
+        $this->createMany(
+            100,
+            'ads',
+            function (int $i) {
+                $ad = new Ad();
+                $ad->setTitle($this->faker->sentence);
+                $ad->setCreatedAt(
+                    \DateTimeImmutable::createFromMutable(
+                        $this->faker->dateTimeBetween('-100 days', '-1 days')
+                    )
+                );
+                $ad->setUpdatedAt(
+                    \DateTimeImmutable::createFromMutable(
+                        $this->faker->dateTimeBetween('-100 days', '-1 days')
+                    )
+                );
 
-            $ad->setEmail($this->faker->email);
+                $ad->setEmail($this->faker->email);
 
-            $ad->setPhone($this->faker->numerify('4########'));
+                $ad->setPhone($this->faker->numerify('4########'));
 
-            $ad->setUsername($this->faker->userName);
+                $ad->setUsername($this->faker->userName);
 
-            $ad->setText($this->faker->text(150));
+                $ad->setText($this->faker->text(150));
 
-            $ad->setIsVisible($this->faker->numberBetween(0, 1));
+                $ad->setIsVisible($this->faker->numberBetween(0, 1));
 
-            $adCategory = $this->getRandomReference('adCategories');
-            $ad->setAdCategory($adCategory);
+                $adCategory = $this->getRandomReference('adCategories');
+                $ad->setAdCategory($adCategory);
 
-            return $ad;
-        });
+                return $ad;
+            }
+        );
 
         $this->manager->flush();
-    }
+    }// end loadData()
 
     /**
      * Get Dependencies.
@@ -65,5 +68,5 @@ class AdFixtures extends AbstractBaseFixtures implements DependentFixtureInterfa
     public function getDependencies(): array
     {
         return [AdCategoryFixtures::class];
-    }
-}
+    }// end getDependencies()
+}// end class

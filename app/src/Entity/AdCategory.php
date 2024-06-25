@@ -7,7 +7,6 @@
 namespace App\Entity;
 
 use App\Repository\AdCategoryRepository;
-use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -35,22 +34,22 @@ class AdCategory
     /**
      * Created At.
      *
-     * @var DateTimeImmutable|null Created at
+     * @var \DateTimeImmutable|null Created at
      */
     #[ORM\Column(type: 'datetime_immutable')]
-    #[Assert\Type(DateTimeImmutable::class)]
+    #[Assert\Type(\DateTimeImmutable::class)]
     #[Gedmo\Timestampable(on: 'create')]
-    private ?DateTimeImmutable $createdAt = null;
+    private ?\DateTimeImmutable $createdAt = null;
 
     /**
      * Updated At.
      *
-     * @var DateTimeImmutable|null Updated at
+     * @var \DateTimeImmutable|null Updated at
      */
     #[ORM\Column(type: 'datetime_immutable')]
-    #[Assert\Type(DateTimeImmutable::class)]
+    #[Assert\Type(\DateTimeImmutable::class)]
     #[Gedmo\Timestampable(on: 'update')]
-    private ?DateTimeImmutable $updatedAt = null;
+    private ?\DateTimeImmutable $updatedAt = null;
 
     /**
      * Name.
@@ -85,47 +84,47 @@ class AdCategory
     public function getId(): ?int
     {
         return $this->id;
-    }
+    }// end getId()
 
     /**
      * Getter for created at.
      *
-     * @return DateTimeImmutable|null Created at
+     * @return \DateTimeImmutable|null Created at
      */
-    public function getCreatedAt(): ?DateTimeImmutable
+    public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->createdAt;
-    }
+    }// end getCreatedAt()
 
     /**
      * Setter for created at.
      *
-     * @param DateTimeImmutable $createdAt Created at
+     * @param \DateTimeImmutable $createdAt Created at
      */
-    public function setCreatedAt(DateTimeImmutable $createdAt): void
+    public function setCreatedAt(\DateTimeImmutable $createdAt): void
     {
         $this->createdAt = $createdAt;
-    }
+    }// end setCreatedAt()
 
     /**
      * Getter for updated at.
      *
-     * @return DateTimeImmutable|null Updated at
+     * @return \DateTimeImmutable|null Updated at
      */
-    public function getUpdatedAt(): ?DateTimeImmutable
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updatedAt;
-    }
+    }// end getUpdatedAt()
 
     /**
      * Setter for updated at.
      *
-     * @param DateTimeImmutable $updatedAt Updated at
+     * @param \DateTimeImmutable $updatedAt Updated at
      */
-    public function setUpdatedAt(DateTimeImmutable $updatedAt): void
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
-    }
+    }// end setUpdatedAt()
 
     /**
      * Getter for name.
@@ -135,7 +134,7 @@ class AdCategory
     public function getName(): ?string
     {
         return $this->name;
-    }
+    }// end getName()
 
     /**
      * Setter for name.
@@ -145,7 +144,7 @@ class AdCategory
     public function setName(string $name): void
     {
         $this->name = $name;
-    }
+    }// end setName()
 
     /**
      * Getter for slug.
@@ -155,7 +154,7 @@ class AdCategory
     public function getSlug(): ?string
     {
         return $this->slug;
-    }
+    }// end getSlug()
 
     /**
      * Setter for slug.
@@ -165,5 +164,5 @@ class AdCategory
     public function setSlug(string $slug): void
     {
         $this->slug = $slug;
-    }
-}
+    }// end setSlug()
+}// end class

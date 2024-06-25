@@ -25,7 +25,7 @@ class AdService implements AdServiceInterface
      */
     public function __construct(private readonly AdRepository $adRepository, private readonly PaginatorInterface $paginator, private readonly AdCategoryServiceInterface $adCategoryService)
     {
-    }
+    }// end __construct()
 
     /**
      * Get paginated list.
@@ -44,7 +44,7 @@ class AdService implements AdServiceInterface
             $page,
             AdRepository::PAGINATOR_ITEMS_PER_PAGE
         );
-    }
+    }// end getPaginatedList()
 
     /**
      * Get paginated list with ads to accept.
@@ -60,7 +60,7 @@ class AdService implements AdServiceInterface
             $page,
             AdRepository::PAGINATOR_ITEMS_PER_PAGE
         );
-    }
+    }// end getPaginatedAcceptList()
 
     /**
      * Save.
@@ -70,7 +70,7 @@ class AdService implements AdServiceInterface
     public function save(Ad $ad): void
     {
         $this->adRepository->save($ad);
-    }
+    }// end save()
 
     /**
      * Save on creation by admin.
@@ -81,7 +81,7 @@ class AdService implements AdServiceInterface
     {
         $ad->setIsVisible(1);
         $this->adRepository->save($ad);
-    }
+    }// end saveOnCreateAdm()
 
     /**
      * Save on creation by user.
@@ -92,7 +92,7 @@ class AdService implements AdServiceInterface
     {
         $ad->setIsVisible(0);
         $this->adRepository->save($ad);
-    }
+    }// end saveOnCreateUs()
 
     /**
      * Delete.
@@ -102,7 +102,7 @@ class AdService implements AdServiceInterface
     public function delete(Ad $ad): void
     {
         $this->adRepository->delete($ad);
-    }
+    }// end delete()
 
     /**
      * Make ad visible.
@@ -113,7 +113,7 @@ class AdService implements AdServiceInterface
     {
         $ad->setIsVisible(1);
         $this->adRepository->save($ad);
-    }
+    }// end makeVisible()
 
     /**
      * Prepare filters.
@@ -133,5 +133,5 @@ class AdService implements AdServiceInterface
         }
 
         return $resultFilters;
-    }
-}
+    }// end prepareFilters()
+}// end class

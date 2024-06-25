@@ -7,7 +7,6 @@
 namespace App\Entity;
 
 use App\Repository\AdRepository;
-use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -93,20 +92,20 @@ class Ad
     /**
      * Created At.
      *
-     * @var DateTimeImmutable|null Created At
+     * @var \DateTimeImmutable|null Created At
      */
     #[ORM\Column(type: 'datetime_immutable')]
     #[Gedmo\Timestampable(on: 'create')]
-    private ?DateTimeImmutable $createdAt = null;
+    private ?\DateTimeImmutable $createdAt = null;
 
     /**
      * Updated At.
      *
-     * @var DateTimeImmutable|null Updated at
+     * @var \DateTimeImmutable|null Updated at
      */
     #[ORM\Column(type: 'datetime_immutable')]
     #[Gedmo\Timestampable(on: 'update')]
-    private ?DateTimeImmutable $updatedAt = null;
+    private ?\DateTimeImmutable $updatedAt = null;
 
     /**
      * Ad Category.
@@ -118,14 +117,14 @@ class Ad
     private ?AdCategory $adCategory = null;
 
     /**
-     *Getter for id.
+     * Getter for id.
      *
      * @return int|null Id
      */
     public function getId(): ?int
     {
         return $this->id;
-    }
+    }// end getId()
 
     /**
      * Getter for is visible.
@@ -135,7 +134,7 @@ class Ad
     public function getIsVisible(): ?int
     {
         return $this->isVisible;
-    }
+    }// end getIsVisible()
 
     /**
      * Setter for is visible.
@@ -145,7 +144,7 @@ class Ad
     public function setIsVisible(int $isVisible): void
     {
         $this->isVisible = $isVisible;
-    }
+    }// end setIsVisible()
 
     /**
      * Getter for username.
@@ -155,7 +154,7 @@ class Ad
     public function getUsername(): ?string
     {
         return $this->username;
-    }
+    }// end getUsername()
 
     /**
      * Setter for username.
@@ -165,7 +164,7 @@ class Ad
     public function setUsername(string $username): void
     {
         $this->username = $username;
-    }
+    }// end setUsername()
 
     /**
      * Getter for email.
@@ -175,7 +174,7 @@ class Ad
     public function getEmail(): ?string
     {
         return $this->email;
-    }
+    }// end getEmail()
 
     /**
      * Setter for email.
@@ -185,7 +184,7 @@ class Ad
     public function setEmail(string $email): void
     {
         $this->email = $email;
-    }
+    }// end setEmail()
 
     /**
      * Getter for phone.
@@ -195,7 +194,7 @@ class Ad
     public function getPhone(): ?string
     {
         return $this->phone;
-    }
+    }// end getPhone()
 
     /**
      * Setter for phone.
@@ -205,27 +204,27 @@ class Ad
     public function setPhone(string $phone): void
     {
         $this->phone = $phone;
-    }
+    }// end setPhone()
 
     /**
      * Getter for created at.
      *
-     * @return DateTimeImmutable|null Created at
+     * @return \DateTimeImmutable|null Created at
      */
-    public function getCreatedAt(): ?DateTimeImmutable
+    public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->createdAt;
-    }
+    }// end getCreatedAt()
 
     /**
      * Setter for created at.
      *
-     * @param DateTimeImmutable|null $createdAt Created At
+     * @param \DateTimeImmutable|null $createdAt Created At
      */
-    public function setCreatedAt(?DateTimeImmutable $createdAt): void
+    public function setCreatedAt(?\DateTimeImmutable $createdAt): void
     {
         $this->createdAt = $createdAt;
-    }
+    }// end setCreatedAt()
 
     /**
      * Getter for text.
@@ -235,7 +234,7 @@ class Ad
     public function getText(): ?string
     {
         return $this->text;
-    }
+    }// end getText()
 
     /**
      * Setter for text.
@@ -245,7 +244,7 @@ class Ad
     public function setText(string $text): void
     {
         $this->text = $text;
-    }
+    }// end setText()
 
     /**
      * Getter for title.
@@ -255,7 +254,7 @@ class Ad
     public function getTitle(): ?string
     {
         return $this->title;
-    }
+    }// end getTitle()
 
     /**
      * Setter for title.
@@ -265,27 +264,27 @@ class Ad
     public function setTitle(string $title): void
     {
         $this->title = $title;
-    }
+    }// end setTitle()
 
     /**
      * Getter for updated at.
      *
-     * @return DateTimeImmutable|null Updated at
+     * @return \DateTimeImmutable|null Updated at
      */
-    public function getUpdatedAt(): ?DateTimeImmutable
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updatedAt;
-    }
+    }// end getUpdatedAt()
 
     /**
      * Setter for updated at.
      *
-     * @param DateTimeImmutable $updatedAt Updated at
+     * @param \DateTimeImmutable $updatedAt Updated at
      */
-    public function setUpdatedAt(DateTimeImmutable $updatedAt): void
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
-    }
+    }// end setUpdatedAt()
 
     /**
      * Getter for ad category.
@@ -295,7 +294,7 @@ class Ad
     public function getAdCategory(): ?AdCategory
     {
         return $this->adCategory;
-    }
+    }// end getAdCategory()
 
     /**
      * Setter for ad category.
@@ -305,5 +304,5 @@ class Ad
     public function setAdCategory(?AdCategory $adCategory): void
     {
         $this->adCategory = $adCategory;
-    }
-}
+    }// end setAdCategory()
+}// end class

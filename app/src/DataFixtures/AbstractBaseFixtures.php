@@ -10,8 +10,6 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
 use Faker\Generator;
-use InvalidArgumentException;
-use LogicException;
 
 /**
  * Class AbstractBaseFixtures.
@@ -51,7 +49,7 @@ abstract class AbstractBaseFixtures extends Fixture
         $this->manager = $manager;
         $this->faker = Factory::create();
         $this->loadData();
-    }
+    }// end load()
 
     /**
      * Load data.
@@ -79,11 +77,13 @@ abstract class AbstractBaseFixtures extends Fixture
     protected function createMany(int $count, string $groupName, callable $factory): void
     {
         for ($i = 0; $i < $count; ++$i) {
-            /** @var object|null $entity */
+            /*
+                @var object|null $entity
+            */
             $entity = $factory($i);
 
             if (null === $entity) {
-                throw new LogicException('Did you forget to return the entity object from your callback to BaseFixture::createMany()?');
+                throw new \LogicException('Did you forget to return the entity object from your callback to BaseFixture::createMany()?');
             }
 
             $this->manager->persist($entity);
@@ -91,7 +91,7 @@ abstract class AbstractBaseFixtures extends Fixture
             // store for usage later than groupName_#COUNT#
             $this->addReference(sprintf('%s_%d', $groupName, $i), $entity);
         }
-    }
+    }// end createMany()
 
     /**
      * Set random reference to the object.
@@ -109,20 +109,20 @@ abstract class AbstractBaseFixtures extends Fixture
             $this->referencesIndex[$groupName] = [];
 
             foreach (array_keys($this->referenceRepository->getReferences()) as $key) {
-                if (str_starts_with((string) $key, $groupName . '_')) {
+                if (str_starts_with((string) $key, $groupName.'_')) {
                     $this->referencesIndex[$groupName][] = $key;
                 }
             }
         }
 
         if (empty($this->referencesIndex[$groupName])) {
-            throw new InvalidArgumentException(sprintf('Did not find any references saved with the group name "%s"', $groupName));
+            throw new \InvalidArgumentException(sprintf('Did not find any references saved with the group name "%s"', $groupName));
         }
 
         $randomReferenceKey = (string) $this->faker->randomElement($this->referencesIndex[$groupName]);
 
         return $this->getReference($randomReferenceKey);
-    }
+    }// end getRandomReference()
 
     /**
      * Get array of objects references based on count.
@@ -142,5 +142,5 @@ abstract class AbstractBaseFixtures extends Fixture
         }
 
         return $references;
-    }
-}
+    }// end getRandomReferences()
+}// end class

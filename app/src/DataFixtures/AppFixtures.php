@@ -25,7 +25,6 @@ class AppFixtures extends Fixture
     {
         // $product = new Product();
         // $manager->persist($product);
-
         $manager->flush();
-    }
-}
+    }// end load()
+}// end class

@@ -12,6 +12,7 @@ namespace App\Entity\Enum;
 enum UserRole: string
 {
     case ROLE_ADMIN = 'ROLE_ADMIN';
+
     /**
      * Label.
      *
@@ -22,5 +23,5 @@ enum UserRole: string
         return match ($this) {
             UserRole::ROLE_ADMIN => 'ROLE_ADMIN',
         };
-    }
-}
+    }// end label()
+}// end enum

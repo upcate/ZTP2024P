@@ -31,7 +31,7 @@ class AdCategoryController extends AbstractController
      */
     public function __construct(private readonly AdCategoryServiceInterface $adCategoryService, private readonly TranslatorInterface $translator)
     {
-    }
+    }// end __construct()
 
     /**
      * Index action.
@@ -54,7 +54,7 @@ class AdCategoryController extends AbstractController
         }
 
         return $this->render('adCategory/index.html.twig', ['pagination' => $pagination]);
-    }
+    }// end index()
 
     /**
      * Show action.
@@ -76,7 +76,7 @@ class AdCategoryController extends AbstractController
             'adCategory/show.html.twig',
             ['adCategory' => $adCategory]
         );
-    }
+    }// end show()
 
     /**
      * Create action.
@@ -112,7 +112,7 @@ class AdCategoryController extends AbstractController
             'adCategory/create.html.twig',
             ['form' => $form->createView()]
         );
-    }
+    }// end create()
 
     /**
      * Edit action.
@@ -131,10 +131,14 @@ class AdCategoryController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function edit(Request $request, AdCategory $adCategory): Response
     {
-        $form = $this->createForm(AdCategoryType::class, $adCategory, [
-            'method' => 'PUT',
-            'action' => $this->generateUrl('adCategory_edit', ['id' => $adCategory->getId()]),
-        ]);
+        $form = $this->createForm(
+            AdCategoryType::class,
+            $adCategory,
+            [
+                'method' => 'PUT',
+                'action' => $this->generateUrl('adCategory_edit', ['id' => $adCategory->getId()]),
+            ]
+        );
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -155,7 +159,7 @@ class AdCategoryController extends AbstractController
                 'adCategory' => $adCategory,
             ]
         );
-    }
+    }// end edit()
 
     /**
      * Delete action.
@@ -183,10 +187,14 @@ class AdCategoryController extends AbstractController
             return $this->redirectToRoute('adCategory_index');
         }
 
-        $form = $this->createForm(FormType::class, $adCategory, [
-            'method' => 'DELETE',
-            'action' => $this->generateUrl('adCategory_delete', ['id' => $adCategory->getId()]),
-        ]);
+        $form = $this->createForm(
+            FormType::class,
+            $adCategory,
+            [
+                'method' => 'DELETE',
+                'action' => $this->generateUrl('adCategory_delete', ['id' => $adCategory->getId()]),
+            ]
+        );
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -207,5 +215,5 @@ class AdCategoryController extends AbstractController
                 'adCategory' => $adCategory,
             ]
         );
-    }
-}
+    }// end delete()
+}// end class

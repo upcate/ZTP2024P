@@ -23,6 +23,9 @@ class MainControllerTest extends WebTestCase
      */
     private \Symfony\Bundle\FrameworkBundle\KernelBrowser $httpClient;
 
+    /**
+     * Set up function.
+     */
     public function setUp(): void
     {
         $this->httpClient = static::createClient();

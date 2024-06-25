@@ -37,7 +37,7 @@ class AdRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Ad::class);
-    }
+    }// end __construct()
 
     /**
      * Query all.
@@ -48,14 +48,10 @@ class AdRepository extends ServiceEntityRepository
      */
     public function queryAll(array $filters): QueryBuilder
     {
-        $queryBuilder = $this->getOrCreateQueryBuilder()
-            ->select('partial ad.{id, createdAt, updatedAt, title, text, isVisible, phone, username}', 'partial adCategory.{id, name}')
-            ->where('ad.isVisible = 1')
-            ->join('ad.adCategory', 'adCategory')
-            ->orderBy('ad.updatedAt', 'DESC');
+        $queryBuilder = $this->getOrCreateQueryBuilder()->select('partial ad.{id, createdAt, updatedAt, title, text, isVisible, phone, username}', 'partial adCategory.{id, name}')->where('ad.isVisible = 1')->join('ad.adCategory', 'adCategory')->orderBy('ad.updatedAt', 'DESC');
 
         return $this->applyFiltersToList($queryBuilder, $filters);
-    }
+    }// end queryAll()
 
     /**
      * Query ads to accept.
@@ -64,12 +60,8 @@ class AdRepository extends ServiceEntityRepository
      */
     public function queryToAccept(): QueryBuilder
     {
-        return $this->getOrCreateQueryBuilder()
-            ->select('partial ad.{id, createdAt, updatedAt, title, text, isVisible, phone, username}', 'partial adCategory.{id, name}')
-            ->where('ad.isVisible = 0')
-            ->join('ad.adCategory', 'adCategory')
-            ->orderBy('ad.createdAt', 'DESC');
-    }
+        return $this->getOrCreateQueryBuilder()->select('partial ad.{id, createdAt, updatedAt, title, text, isVisible, phone, username}', 'partial adCategory.{id, name}')->where('ad.isVisible = 0')->join('ad.adCategory', 'adCategory')->orderBy('ad.createdAt', 'DESC');
+    }// end queryToAccept()
 
     /**
      * Add.
@@ -84,7 +76,7 @@ class AdRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
-    }
+    }// end add()
 
     /**
      * Remove.
@@ -99,7 +91,7 @@ class AdRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
-    }
+    }// end remove()
 
     /**
      * Count by category.
@@ -115,12 +107,8 @@ class AdRepository extends ServiceEntityRepository
     {
         $qb = $this->getOrCreateQueryBuilder();
 
-        return $qb->select($qb->expr()->countDistinct('ad.id'))
-            ->where('ad.adCategory = :adCategory')
-            ->setParameter(':adCategory', $adCategory)
-            ->getQuery()
-            ->getSingleScalarResult();
-    }
+        return $qb->select($qb->expr()->countDistinct('ad.id'))->where('ad.adCategory = :adCategory')->setParameter(':adCategory', $adCategory)->getQuery()->getSingleScalarResult();
+    }// end countByCategory()
 
     /**
      * Save.
@@ -131,7 +119,7 @@ class AdRepository extends ServiceEntityRepository
     {
         $this->_em->persist($ad);
         $this->_em->flush();
-    }
+    }// end save()
 
     /**
      * Delete.
@@ -142,7 +130,7 @@ class AdRepository extends ServiceEntityRepository
     {
         $this->_em->remove($ad);
         $this->_em->flush();
-    }
+    }// end delete()
 
     /**
      * Apply filters to list.
@@ -155,12 +143,11 @@ class AdRepository extends ServiceEntityRepository
     private function applyFiltersToList(QueryBuilder $queryBuilder, array $filters = []): QueryBuilder
     {
         if (isset($filters['adCategory']) && $filters['adCategory'] instanceof AdCategory) {
-            $queryBuilder->andWhere('adCategory = :adCategory')
-                ->setParameter('adCategory', $filters['adCategory']);
+            $queryBuilder->andWhere('adCategory = :adCategory')->setParameter('adCategory', $filters['adCategory']);
         }
 
         return $queryBuilder;
-    }
+    }// end applyFiltersToList()
 
     /**
      * Get or create query builder.
@@ -169,33 +156,32 @@ class AdRepository extends ServiceEntityRepository
      *
      * @return QueryBuilder Query builder
      */
-    private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
+    private function getOrCreateQueryBuilder(?QueryBuilder $queryBuilder = null): QueryBuilder
     {
         return $queryBuilder ?? $this->createQueryBuilder('ad');
-    }
+    }// end getOrCreateQueryBuilder()
 
-//    /**
-//     * @return Ad[] Returns an array of Ad objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('a')
-//            ->andWhere('a.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('a.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Ad
-//    {
-//        return $this->createQueryBuilder('a')
-//            ->andWhere('a.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
-}
+    // **
+    // * @return Ad[] Returns an array of Ad objects
+    // */
+    // public function findByExampleField($value): array
+    // {
+    // return $this->createQueryBuilder('a')
+    // ->andWhere('a.exampleField = :val')
+    // ->setParameter('val', $value)
+    // ->orderBy('a.id', 'ASC')
+    // ->setMaxResults(10)
+    // ->getQuery()
+    // ->getResult()
+    // ;
+    // }
+    // public function findOneBySomeField($value): ?Ad
+    // {
+    // return $this->createQueryBuilder('a')
+    // ->andWhere('a.exampleField = :val')
+    // ->setParameter('val', $value)
+    // ->getQuery()
+    // ->getOneOrNullResult()
+    // ;
+    // }
+}// end class

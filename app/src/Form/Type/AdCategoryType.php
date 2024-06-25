@@ -34,7 +34,7 @@ class AdCategoryType extends AbstractType
                 'attr' => ['max_length' => 64],
             ]
         );
-    }
+    }// end buildForm()
 
     /**
      * Configure options.
@@ -44,7 +44,7 @@ class AdCategoryType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults(['data_class' => AdCategory::class]);
-    }
+    }// end configureOptions()
 
     /**
      * Get block prefix.
@@ -54,5 +54,5 @@ class AdCategoryType extends AbstractType
     public function getBlockPrefix(): string
     {
         return 'adCategory';
-    }
-}
+    }// end getBlockPrefix()
+}// end class

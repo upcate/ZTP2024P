@@ -184,7 +184,7 @@
       </trans-unit>
       <trans-unit id="title.change_data">
         <source>title.change_data</source>
-        <target>Change login data</target>
+        <target>Change password</target>
       </trans-unit>
       <trans-unit id="message.accepted_successfully">
         <source>message.accepted_successfully</source>

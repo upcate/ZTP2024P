@@ -30,7 +30,7 @@ class UserController extends AbstractController
      */
     public function __construct(private readonly UserServiceInterface $userService, private readonly TranslatorInterface $translator)
     {
-    }
+    }// end __construct()
 
     /**
      * Edit action.
@@ -49,10 +49,14 @@ class UserController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function edit(Request $request, User $user): Response
     {
-        $form = $this->createForm(UserType::class, $user, [
-            'method' => 'PUT',
-            'action' => $this->generateUrl('user_edit', ['id' => $user->getId()]),
-        ]);
+        $form = $this->createForm(
+            UserType::class,
+            $user,
+            [
+                'method' => 'PUT',
+                'action' => $this->generateUrl('user_edit', ['id' => $user->getId()]),
+            ]
+        );
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -73,5 +77,5 @@ class UserController extends AbstractController
                 'user' => $user,
             ]
         );
-    }
-}
+    }// end edit()
+}// end class

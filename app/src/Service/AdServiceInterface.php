@@ -57,4 +57,4 @@ interface AdServiceInterface
      * @param Ad $ad Ad Entity
      */
     public function delete(Ad $ad): void;
-}
+}// end interface

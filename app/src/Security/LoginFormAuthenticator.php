@@ -43,7 +43,7 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
      */
     public function __construct(private UrlGeneratorInterface $urlGenerator)
     {
-    }
+    }// end __construct()
 
     /**
      * Supports.
@@ -55,7 +55,7 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
     public function supports(Request $request): bool
     {
         return 'app_login' === $request->attributes->get('_route') && $request->isMethod('POST');
-    }
+    }// end supports()
 
     /**
      * Authenticate.
@@ -77,7 +77,7 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
                 new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
             ]
         );
-    }
+    }// end authenticate()
 
     /**
      * On authentication success.
@@ -95,7 +95,7 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         return new RedirectResponse($this->urlGenerator->generate(self::DEFAULT_ROUTE));
-    }
+    }// end onAuthenticationSuccess()
 
     /**
      * Get log in url.
@@ -107,5 +107,5 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
     protected function getLoginUrl(Request $request): string
     {
         return $this->urlGenerator->generate(self::LOGIN_ROUTE);
-    }
-}
+    }// end getLoginUrl()
+}// end class

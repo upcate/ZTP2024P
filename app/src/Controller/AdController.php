@@ -1,6 +1,7 @@
 <?php
 
-/**9
+/**
+ * 9
  * AdController.
  */
 
@@ -31,7 +32,7 @@ class AdController extends AbstractController
      */
     public function __construct(private readonly AdServiceInterface $adService, private readonly TranslatorInterface $translator)
     {
-    }
+    }// end __construct()
 
     /**
      * Index action.
@@ -57,7 +58,7 @@ class AdController extends AbstractController
         }
 
         return $this->render('ad/index.html.twig', ['pagination' => $pagination]);
-    }
+    }// end index()
 
     /**
      * Get filters.
@@ -69,7 +70,7 @@ class AdController extends AbstractController
     public function getFilters(Request $request): array
     {
         return ['adCategory_id' => $request->query->getInt('filters_adCategory_id')];
-    }
+    }// end getFilters()
 
     /**
      * Index to accept action.
@@ -91,7 +92,7 @@ class AdController extends AbstractController
         );
 
         return $this->render('ad/accept.index.html.twig', ['pagination' => $pagination]);
-    }
+    }// end indexToAccept()
 
     /**
      * Accept action.
@@ -110,10 +111,14 @@ class AdController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function acceptAd(Request $request, Ad $ad): Response
     {
-        $form = $this->createForm(FormType::class, $ad, [
-            'method' => 'PUT',
-            'action' => $this->generateUrl('ad_accept', ['id' => $ad->getId()]),
-        ]);
+        $form = $this->createForm(
+            FormType::class,
+            $ad,
+            [
+                'method' => 'PUT',
+                'action' => $this->generateUrl('ad_accept', ['id' => $ad->getId()]),
+            ]
+        );
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -134,7 +139,7 @@ class AdController extends AbstractController
                 'form' => $form->createView(),
             ]
         );
-    }
+    }// end acceptAd()
 
     /**
      * Show action.
@@ -151,7 +156,7 @@ class AdController extends AbstractController
     )]
     public function show(Ad $ad): Response
     {
-        if (0 == $ad->getIsVisible()) {
+        if (0 === $ad->getIsVisible()) {
             if (!$this->isGranted('ROLE_ADMIN')) {
                 return $this->redirectToRoute('app_login');
             }
@@ -161,7 +166,7 @@ class AdController extends AbstractController
             'ad/show.html.twig',
             ['ad' => $ad]
         );
-    }
+    }// end show()
 
     /**
      * Create action.
@@ -202,7 +207,7 @@ class AdController extends AbstractController
                 'form' => $form->createView(),
             ]
         );
-    }
+    }// end create()
 
     /**
      * Edit action.
@@ -221,10 +226,14 @@ class AdController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function edit(Request $request, Ad $ad): Response
     {
-        $form = $this->createForm(AdType::class, $ad, [
-            'method' => 'PUT',
-            'action' => $this->generateUrl('ad_edit', ['id' => $ad->getId()]),
-        ]);
+        $form = $this->createForm(
+            AdType::class,
+            $ad,
+            [
+                'method' => 'PUT',
+                'action' => $this->generateUrl('ad_edit', ['id' => $ad->getId()]),
+            ]
+        );
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -238,11 +247,14 @@ class AdController extends AbstractController
             return $this->redirectToRoute('ad_index');
         }
 
-        return $this->render('ad/edit.html.twig', [
-            'form' => $form->createView(),
-            'ad' => $ad,
-        ]);
-    }
+        return $this->render(
+            'ad/edit.html.twig',
+            [
+                'form' => $form->createView(),
+                'ad' => $ad,
+            ]
+        );
+    }// end edit()
 
     /**
      * Delete action.
@@ -261,10 +273,14 @@ class AdController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function delete(Request $request, Ad $ad): Response
     {
-        $form = $this->createForm(FormType::class, $ad, [
-            'method' => 'DELETE',
-            'action' => $this->generateUrl('ad_delete', ['id' => $ad->getId()]),
-        ]);
+        $form = $this->createForm(
+            FormType::class,
+            $ad,
+            [
+                'method' => 'DELETE',
+                'action' => $this->generateUrl('ad_delete', ['id' => $ad->getId()]),
+            ]
+        );
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -278,11 +294,14 @@ class AdController extends AbstractController
             return $this->redirectToRoute('ad_index');
         }
 
-        return $this->render('ad/delete.html.twig', [
-            'form' => $form->createView(),
-            'ad' => $ad,
-        ]);
-    }
+        return $this->render(
+            'ad/delete.html.twig',
+            [
+                'form' => $form->createView(),
+                'ad' => $ad,
+            ]
+        );
+    }// end delete()
 
     /**
      * Delete to accept action.
@@ -301,10 +320,14 @@ class AdController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function deleteToAccept(Request $request, Ad $ad): Response
     {
-        $form = $this->createForm(FormType::class, $ad, [
-            'method' => 'DELETE',
-            'action' => $this->generateUrl('accept_delete', ['id' => $ad->getId()]),
-        ]);
+        $form = $this->createForm(
+            FormType::class,
+            $ad,
+            [
+                'method' => 'DELETE',
+                'action' => $this->generateUrl('accept_delete', ['id' => $ad->getId()]),
+            ]
+        );
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -318,9 +341,12 @@ class AdController extends AbstractController
             return $this->redirectToRoute('accept_index');
         }
 
-        return $this->render('ad/delete.accept.html.twig', [
-            'form' => $form->createView(),
-            'ad' => $ad,
-        ]);
-    }
-}
+        return $this->render(
+            'ad/delete.accept.html.twig',
+            [
+                'form' => $form->createView(),
+                'ad' => $ad,
+            ]
+        );
+    }// end deleteToAccept()
+}// end class

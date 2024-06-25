@@ -84,7 +84,7 @@ class AdType extends AbstractType
                 'required' => 'true',
             ]
         );
-    }
+    }// end buildForm()
 
     /**
      * Configure options.
@@ -94,7 +94,7 @@ class AdType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults(['data_class' => Ad::class]);
-    }
+    }// end configureOptions()
 
     /**
      * Get block prefix.
@@ -104,5 +104,5 @@ class AdType extends AbstractType
     public function getBlockPrefix(): string
     {
         return 'ad';
-    }
-}
+    }// end getBlockPrefix()
+}// end class

@@ -36,7 +36,7 @@ class AdCategoryRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, AdCategory::class);
-    }
+    }// end __construct()
 
     /**
      * Query all.
@@ -45,9 +45,8 @@ class AdCategoryRepository extends ServiceEntityRepository
      */
     public function queryAll(): QueryBuilder
     {
-        return $this->getOrCreateQueryBuilder()
-            ->orderBy('adCategory.updatedAt', 'DESC');
-    }
+        return $this->getOrCreateQueryBuilder()->orderBy('adCategory.updatedAt', 'DESC');
+    }// end queryAll()
 
     /**
      * Add.
@@ -62,7 +61,7 @@ class AdCategoryRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
-    }
+    }// end add()
 
     /**
      * Remove.
@@ -77,7 +76,7 @@ class AdCategoryRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
-    }
+    }// end remove()
 
     /**
      * Save.
@@ -88,7 +87,7 @@ class AdCategoryRepository extends ServiceEntityRepository
     {
         $this->_em->persist($adCategory);
         $this->_em->flush();
-    }
+    }// end save()
 
     /**
      * Delete.
@@ -99,7 +98,7 @@ class AdCategoryRepository extends ServiceEntityRepository
     {
         $this->_em->remove($adCategory);
         $this->_em->flush();
-    }
+    }// end delete()
 
     /**
      * Get or create query builder.
@@ -108,33 +107,32 @@ class AdCategoryRepository extends ServiceEntityRepository
      *
      * @return QueryBuilder Query builder
      */
-    private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
+    private function getOrCreateQueryBuilder(?QueryBuilder $queryBuilder = null): QueryBuilder
     {
         return $queryBuilder ?? $this->createQueryBuilder('adCategory');
-    }
+    }// end getOrCreateQueryBuilder()
 
-//    /**
-//     * @return AdCategory[] Returns an array of AdCategory objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('a')
-//            ->andWhere('a.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('a.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?AdCategory
-//    {
-//        return $this->createQueryBuilder('a')
-//            ->andWhere('a.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
-}
+    // **
+    // * @return AdCategory[] Returns an array of AdCategory objects
+    // */
+    // public function findByExampleField($value): array
+    // {
+    // return $this->createQueryBuilder('a')
+    // ->andWhere('a.exampleField = :val')
+    // ->setParameter('val', $value)
+    // ->orderBy('a.id', 'ASC')
+    // ->setMaxResults(10)
+    // ->getQuery()
+    // ->getResult()
+    // ;
+    // }
+    // public function findOneBySomeField($value): ?AdCategory
+    // {
+    // return $this->createQueryBuilder('a')
+    // ->andWhere('a.exampleField = :val')
+    // ->setParameter('val', $value)
+    // ->getQuery()
+    // ->getOneOrNullResult()
+    // ;
+    // }
+}// end class

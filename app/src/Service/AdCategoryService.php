@@ -28,7 +28,7 @@ class AdCategoryService implements AdCategoryServiceInterface
      */
     public function __construct(private readonly AdCategoryRepository $adCategoryRepository, private readonly PaginatorInterface $paginator, private readonly AdRepository $adRepository)
     {
-    }
+    }// end __construct()
 
     /**
      * Get paginated list.
@@ -44,7 +44,7 @@ class AdCategoryService implements AdCategoryServiceInterface
             $page,
             AdCategoryRepository::PAGINATOR_ITEMS_PER_PAGE
         );
-    }
+    }// end getPaginatedList()
 
     /**
      * Save.
@@ -56,10 +56,11 @@ class AdCategoryService implements AdCategoryServiceInterface
         if (null === $adCategory->getId()) {
             $adCategory->setCreatedAt(new \DateTimeImmutable());
         }
+
         $adCategory->setUpdatedAt(new \DateTimeImmutable());
 
         $this->adCategoryRepository->save($adCategory);
-    }
+    }// end save()
 
     /**
      * Delete.
@@ -69,7 +70,7 @@ class AdCategoryService implements AdCategoryServiceInterface
     public function delete(AdCategory $adCategory): void
     {
         $this->adCategoryRepository->delete($adCategory);
-    }
+    }// end delete()
 
     /**
      * Check can be deleted.
@@ -84,10 +85,10 @@ class AdCategoryService implements AdCategoryServiceInterface
             $result = $this->adRepository->countByCategory($adCategory);
 
             return $result <= 0;
-        } catch (NoResultException | NonUniqueResultException) {
+        } catch (NoResultException|NonUniqueResultException) {
             return false;
         }
-    }
+    }// end canBeDeleted()
 
     /**
      * Find one by id.
@@ -99,5 +100,5 @@ class AdCategoryService implements AdCategoryServiceInterface
     public function findOneById(int $id): ?AdCategory
     {
         return $this->adCategoryRepository->findOneById($id);
-    }
-}
+    }// end findOneById()
+}// end class

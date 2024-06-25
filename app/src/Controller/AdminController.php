@@ -33,5 +33,5 @@ class AdminController extends AbstractController
         return $this->render(
             'admin/panel.html.twig'
         );
-    }
-}
+    }// end panel()
+}// end class

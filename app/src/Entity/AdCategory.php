@@ -139,9 +139,9 @@ class AdCategory
     /**
      * Setter for name.
      *
-     * @param string $name Name
+     * @param string|null $name Name
      */
-    public function setName(string $name): void
+    public function setName(?string $name): void
     {
         $this->name = $name;
     }// end setName()

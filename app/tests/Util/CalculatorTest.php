@@ -2,6 +2,7 @@
 /**
  * Tests for Calculator.
  */
+
 namespace App\Tests\Util;
 
 use App\Util\Calculator;

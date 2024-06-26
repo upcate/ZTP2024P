@@ -2,6 +2,7 @@
 /**
  * AcCategoryTest.
  */
+
 namespace App\Tests\Entity;
 
 use App\Entity\AdCategory;

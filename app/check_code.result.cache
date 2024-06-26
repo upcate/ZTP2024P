@@ -1,11 +1,7 @@
 
-Found 0 of 31 files that can be fixed in 0.561 seconds, 18.00 MB memory used
-   1) tests/Controller/SecurityControllerTest.php (class_attributes_separation, no_blank_lines_after_phpdoc)
-   2) tests/Controller/UserControllerTest.php (class_attributes_separation, no_blank_lines_after_phpdoc)
-   3) tests/Entity/AdCategoryTest.php (blank_lines_before_namespace)
-   4) tests/Util/CalculatorTest.php (blank_lines_before_namespace)
+Found 0 of 31 files that can be fixed in 0.568 seconds, 18.00 MB memory used
 
-Found 4 of 13 files that can be fixed in 0.380 seconds, 18.00 MB memory used
+Found 0 of 13 files that can be fixed in 0.376 seconds, 18.00 MB memory used
  ------- -------- ---- ---------------------- 
   State   Domain   Id   Message Preview (en)  
  ------- -------- ---- ---------------------- 
@@ -15,9 +11,9 @@ Found 4 of 13 files that can be fixed in 0.380 seconds, 18.00 MB memory used
  ------- -------- ---- ---------------------- ------------------------------- 
 
 [notice] Migrating up to DoctrineMigrations\Version20240609122021
-[notice] finished in 100.2ms, used 24M memory, 1 migrations executed, 5 sql queries
+[notice] finished in 111.7ms, used 24M memory, 1 migrations executed, 5 sql queries
 
- [OK] Successfully migrated to version: DoctrineMigrations\Version20240609122021                                        
+ [OK] Successfully migrated to version: DoctrineMigrations\Version20240609122021
 
 
    > purging database

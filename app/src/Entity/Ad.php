@@ -159,9 +159,9 @@ class Ad
     /**
      * Setter for username.
      *
-     * @param string $username Username
+     * @param string|null $username Username
      */
-    public function setUsername(string $username): void
+    public function setUsername(?string $username): void
     {
         $this->username = $username;
     }// end setUsername()
@@ -179,9 +179,9 @@ class Ad
     /**
      * Setter for email.
      *
-     * @param string $email Email
+     * @param string|null $email Email
      */
-    public function setEmail(string $email): void
+    public function setEmail(?string $email): void
     {
         $this->email = $email;
     }// end setEmail()
@@ -199,9 +199,9 @@ class Ad
     /**
      * Setter for phone.
      *
-     * @param string $phone Phone number
+     * @param string|null $phone Phone number
      */
-    public function setPhone(string $phone): void
+    public function setPhone(?string $phone): void
     {
         $this->phone = $phone;
     }// end setPhone()
@@ -239,9 +239,9 @@ class Ad
     /**
      * Setter for text.
      *
-     * @param string $text Text
+     * @param string|null $text Text
      */
-    public function setText(string $text): void
+    public function setText(?string $text): void
     {
         $this->text = $text;
     }// end setText()
@@ -259,9 +259,9 @@ class Ad
     /**
      * Setter for title.
      *
-     * @param string $title Title
+     * @param string|null $title Title
      */
-    public function setTitle(string $title): void
+    public function setTitle(?string $title): void
     {
         $this->title = $title;
     }// end setTitle()

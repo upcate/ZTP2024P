@@ -29,8 +29,8 @@ class SecurityControllerTest extends WebTestCase
     /**
      * AdminUser.
      */
-
     private User $adminUser;
+
     /**
      * Set up function.
      */

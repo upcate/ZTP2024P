@@ -31,6 +31,7 @@ class UserType extends AbstractType
             [
                 'label' => 'label.password',
                 'required' => 'true',
+                'attr' => ['min_length' => 6, 'max_length' => 20],
             ]
         );
     }// end buildForm()
